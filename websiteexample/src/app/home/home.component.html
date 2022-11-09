@@ -7,11 +7,11 @@
         <h1>Welcome to Library</h1>
         <div align="center">
             <img src="assets/images/library-icon.png">
-
         </div>
     </mat-card-content>
     <mat-card-actions>
 <div>
+    <h1 *ngFor="let book of books">{{book.title}}</h1>
 </div>
 </mat-card-actions>
 </mat-card>
