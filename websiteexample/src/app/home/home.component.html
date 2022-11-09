@@ -1,8 +1,4 @@
 <mat-card>
-    <mat-card-header >
-        <mat-card-title>
-        </mat-card-title>
-    </mat-card-header>
     <mat-card-content>
         <h1>Welcome to Library</h1>
         <div align="center">
@@ -10,8 +6,8 @@
         </div>
     </mat-card-content>
     <mat-card-actions>
-<div>
-    <h1 *ngFor="let book of books">{{book.title}}</h1>
-</div>
+    <div align="center">
+    <button mat-raised-button (click)="viewBooks()">View books</button>
+    </div>
 </mat-card-actions>
 </mat-card>

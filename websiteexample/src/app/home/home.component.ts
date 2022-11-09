@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { BookdataService } from '../services/bookdata.service';
 import { Book } from '../model/Book';
+import { Router } from '@angular/router';
 
 
 
@@ -14,24 +15,15 @@ import { Book } from '../model/Book';
 
 
 export class HomeComponent implements OnInit {
-  private _jsonURL = 'assets/JsonFiles/sample1.json';
-  books: Book[] =[]
 
-  constructor(private http: HttpClient, private bookdata: BookdataService) { }
+
+  constructor(private router: Router) { }
   ngOnInit(): void {
-    this.getbookDetails();
   }
 
-  public getbookDetails(): void {
-    this.bookdata.getJSON()
-    .subscribe({
-      next: data => {
-        this.books = data;
-        console.log(this.books);
-      },
-      error: error => {
-        console.log(error);
-      }
-   });
+
+  viewBooks(){ 
+    this.router.navigate(['/books'])
   }
+
 }
