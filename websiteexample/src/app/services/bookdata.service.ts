@@ -9,7 +9,7 @@ import { Book } from '../model/Book';
 export class BookdataService {
 
   constructor(private http: HttpClient) { }
-  private _jsonURL = 'assets/JsonFiles/book.json';
+  private _jsonURL = 'http://localhost:8080/books/all';
 
   public getJSON(): Observable<Book[]> {
     return this.http.get<Book[]>(this._jsonURL);
